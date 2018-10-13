@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>GaRanKHN</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>khn</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/404.jsp</location>
+  </error-page>
+  <servlet>
+    <servlet-name>HomePage</servlet-name>
+    <jsp-file>/homepage.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomePage</servlet-name>
+    <url-pattern>/home</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Login</servlet-name>
+    <jsp-file>/login.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MenuGaRan</servlet-name>
+    <servlet-class>Database.Controller.Sevrlet_Menu_Garan</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MenuGaRan</servlet-name>
+    <url-pattern>/garanngonngon</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MenuBurger</servlet-name>
+    <servlet-class>Database.Controller.Sevrlet_Menu_Burger</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MenuBurger</servlet-name>
+    <url-pattern>/burgerngonngon</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MenuWater</servlet-name>
+    <servlet-class>Database.Controller.Sevrlet_Menu_Water</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MenuWater</servlet-name>
+    <url-pattern>/nuocngonngon</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MenuTrangmieng</servlet-name>
+    <servlet-class>Database.Controller.Sevrlet_Menu_Other</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MenuTrangmieng</servlet-name>
+    <url-pattern>/trangmiengngonngon</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>startup</servlet-name>
+    <servlet-class>Database.Controller.Sevrlet_startup</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>startup</servlet-name>
+    <url-pattern>/khn</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>addToCart</servlet-name>
+    <servlet-class>Database.Controller.Servlet_AddtoCart_Controller</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addToCart</servlet-name>
+    <url-pattern>/addtocart</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>loginAccountChecking</servlet-name>
+    <servlet-class>Database.Controller.Servlet_Account_Checking</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginAccountChecking</servlet-name>
+    <url-pattern>/checking</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>signupAccount</servlet-name>
+    <servlet-class>Database.Controller.Servlet_Account_Signup</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signupAccount</servlet-name>
+    <url-pattern>/signup</url-pattern>
+  </servlet-mapping>
+
+<!-- SESSION TIME OUT -->
+  <session-config>
+    <session-timeout>10</session-timeout>
+  </session-config>
+  
+  
+</web-app>
