@@ -23,7 +23,7 @@
 				VNĐ
 			</h4>
 
-			<a href="addtocart?idFood=${rs.getString(1)}" class="btn btn-default add-to-cart cd-popup-trigger"
+			<a href="addtocart?idFood=<%=rs.getString(1)%>" class="btn btn-default add-to-cart cd-popup-trigger"
 				style="margin-left: 85px"><i class="fa fa-shopping-cart"></i>Giỏ
 				hàng</a>
 		</div>

@@ -1680,7 +1680,7 @@ h2.title {
 
 
 #cart_items .cart_info .cart_menu {
-  background: #FE980F;
+  background: #f6f676;
   color: #fff;
   font-size: 16px;
   font-family: 'Tahoma', Tahoma;
@@ -1735,7 +1735,7 @@ h2.title {
 
 
 #cart_items .cart_info .cart_total_price {
-  color: #FE980F;
+  color: #f6f676;
   font-size: 24px;
 }
 
@@ -1775,14 +1775,14 @@ h2.title {
 
 
 .cart_delete a {
-  background:#F0F0E9;
-  color: #FFFFFF;
+  background:#ff3640;
+  color: #ff3640;
   padding: 5px 7px;
   font-size: 16px
 }
 
 .cart_delete a:hover {
-  background:#FE980F
+  background:#60f3e0
 }
 
 
@@ -2084,7 +2084,7 @@ h2.title {
 
 #cart_items .cart_info 
 .table.table-condensed.total-result span {
-  color: #FE980F;
+  color: yellow;
   font-weight: 700;
   font-size: 16px
 }

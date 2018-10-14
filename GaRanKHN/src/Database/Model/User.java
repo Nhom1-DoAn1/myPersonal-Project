@@ -8,11 +8,6 @@ public Account getAccount() {
 public void setAccount(Account account) {
 	this.account = account;
 }
-public Order getOrder() {
-	return order;
-}
-public void setOrder(Order order) {
-	this.order = order;
-}
-private Order order;
+
+
 }

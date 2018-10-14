@@ -31,6 +31,14 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>cart</servlet-name>
+    <jsp-file>/Cart.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>cart</servlet-name>
+    <url-pattern>/cart</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>MenuGaRan</servlet-name>
     <servlet-class>Database.Controller.Sevrlet_Menu_Garan</servlet-class>
   </servlet>
@@ -94,7 +102,6 @@
     <servlet-name>signupAccount</servlet-name>
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <servlet-name>signinAccount</servlet-name>
     <servlet-class>Database.Controller.Servlet_Login</servlet-class>

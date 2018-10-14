@@ -61,8 +61,7 @@ border: 5px solid #fff;
 		<div id="content">
 
 
-		XIN LỖI BẠN TÍNH NĂNG NÀY ĐANG ĐƯỢC DEV PHÁT TRIỂN SML.
-		<img alt="" src="images/home/img_error_404.png">
+		<%@ include file="Cart_detail.jsp"%>
 
 	
 		</div>

@@ -45,12 +45,18 @@
 							%> Tài khoản <%} else
 							{%> <%=user.getAccount().getIdAccount() %> <%} %> </a></li>
 
-							<li><a href="cart.html"><i class="fa fa-shopping-cart"></i>
-									Giỏ hàng</a></li>
-
-
-
 							<%int activekey = (int) pageContext.getAttribute("activekey", pageContext.APPLICATION_SCOPE); %>
+
+							<%if(activekey !=6) {%>
+							<li><a href="cart"><i class="fa fa-shopping-cart"></i>
+									Giỏ hàng</a></li>
+							<%} %>
+
+							<%if(activekey ==6) {%>
+							<li><a href="cart" style="color: yellow;"><i class="fa fa-shopping-cart"></i>
+									Giỏ hàng</a></li>
+							<%} %>
+
 
 							<%if(activekey !=5){ %>
 							<li><a href="login"><i class="fa fa-lock"></i> <%
@@ -59,20 +65,21 @@
 							
 							%> Đăng nhập <%} else
 							{%> Đăng xuất <%} %> </a></li>
-							
+
 							<%} %>
-							
-							
+
+
 							<%if(activekey ==5){ %>
-							<li><a href="signin" style="color: yellow;"><i class="fa fa-lock"></i> <%
+							<li><a href="signin" style="color: yellow;"><i
+									class="fa fa-lock"></i> <%
 							if(user == null)
 							{
 							
 							%> Đăng nhập <%} else
 							{%> Đăng xuất <%} %> </a></li>
-							
+
 							<%} %>
-							
+
 						</ul>
 					</div>
 				</div>
