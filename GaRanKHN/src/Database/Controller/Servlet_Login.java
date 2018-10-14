@@ -1,47 +1,49 @@
 package Database.Controller;
 
 import java.io.IOException;
-import java.sql.ResultSet;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.jsp.PageContext;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
+
+import Database.Model.User;
 
 /**
- * Servlet implementation class Menu_Garan
+ * Servlet implementation class Servlet_Login
  */
-
-public class Sevrlet_startup extends HttpServlet {
+@WebServlet("/Servlet_Login")
+public class Servlet_Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public Sevrlet_startup() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Servlet_Login() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().setAttribute("activekey", 0);
-		request.setAttribute("key", 0);
-		RequestDispatcher dr = request.getRequestDispatcher("home");
-		dr.forward(request, response);
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		if(!session.isNew())
+			session.removeAttribute("user");
+			
+		response.sendRedirect("login");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

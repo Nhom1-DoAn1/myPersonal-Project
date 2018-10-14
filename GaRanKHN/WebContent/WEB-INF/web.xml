@@ -86,8 +86,6 @@
     <servlet-name>loginAccountChecking</servlet-name>
     <url-pattern>/checking</url-pattern>
   </servlet-mapping>
-
-
   <servlet>
     <servlet-name>signupAccount</servlet-name>
     <servlet-class>Database.Controller.Servlet_Account_Signup</servlet-class>
@@ -97,10 +95,15 @@
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
 
-<!-- SESSION TIME OUT -->
+  <servlet>
+    <servlet-name>signinAccount</servlet-name>
+    <servlet-class>Database.Controller.Servlet_Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>signinAccount</servlet-name>
+    <url-pattern>/signin</url-pattern>
+  </servlet-mapping>
   <session-config>
     <session-timeout>10</session-timeout>
   </session-config>
-  
-  
 </web-app>

@@ -53,7 +53,6 @@ body {
 		<div id="header">
 
 			<%
-				session.setMaxInactiveInterval(1);
 				this.getServletContext().setAttribute("activekey", 5);
 			%>
 		
