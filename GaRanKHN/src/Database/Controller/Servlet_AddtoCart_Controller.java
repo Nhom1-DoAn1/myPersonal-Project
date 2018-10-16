@@ -43,6 +43,8 @@ public class Servlet_AddtoCart_Controller extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("activekey", 6);
 		Food food = null;
+		if(session.getAttribute("user")!=null)
+		{
 		try {
 			int quantity = 1;
 			String id = "";
@@ -93,7 +95,7 @@ public class Servlet_AddtoCart_Controller extends HttpServlet {
 					}
 
 				}
-				
+
 				if(check == false)
 				{
 					ListItems.add(item);
@@ -108,9 +110,13 @@ public class Servlet_AddtoCart_Controller extends HttpServlet {
 		{
 			response.sendRedirect("home");
 		}
-
+		}
+		else
+		{response.sendRedirect("signin");}
 
 	}
+
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
