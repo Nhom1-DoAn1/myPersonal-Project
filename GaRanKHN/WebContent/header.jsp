@@ -22,7 +22,9 @@
 		</div>
 	</div>
 	<!--/header_top-->
-
+			<%int activekey = (int) session.getAttribute("activekey"); 
+			User user =(User) session.getAttribute("user");
+			%>
 	<div class="header-middle">
 		<!--header-middle-->
 		<div class="container">
@@ -37,26 +39,24 @@
 				<div class="col-sm-8">
 					<div class="shop-menu pull-right">
 						<ul class="nav navbar-nav">
-							<li><a href="#"><i class="fa fa-user"></i> <% User user =(User) session.getAttribute("user");
-						
+							<li><a href="#"><i class="fa fa-user"></i> <% 			
 							if(user == null)
 							{
 							
 							%> Tài khoản <%} else
 							{%> <%=user.getAccount().getIdAccount() %> <%} %> </a></li>
 
-							<%int activekey = (int) pageContext.getAttribute("activekey", pageContext.APPLICATION_SCOPE); %>
 
-							<%if(activekey !=6) {%>
+							<%if(activekey !=6){ %>
 							<li><a href="cart"><i class="fa fa-shopping-cart"></i>
 									Giỏ hàng</a></li>
-							<%} %>
+								<%} %>
 
-							<%if(activekey ==6) {%>
+							<%if(activekey ==6){ %>
 							<li><a href="cart" style="color: yellow;"><i class="fa fa-shopping-cart"></i>
 									Giỏ hàng</a></li>
-							<%} %>
-
+								<%} %>
+				
 
 							<%if(activekey !=5){ %>
 							<li><a href="login"><i class="fa fa-lock"></i> <%
@@ -65,21 +65,20 @@
 							
 							%> Đăng nhập <%} else
 							{%> Đăng xuất <%} %> </a></li>
-
+							
 							<%} %>
-
-
+							
+							
 							<%if(activekey ==5){ %>
-							<li><a href="signin" style="color: yellow;"><i
-									class="fa fa-lock"></i> <%
+							<li><a href="login" style="color: yellow;"><i class="fa fa-lock"></i> <%
 							if(user == null)
 							{
 							
 							%> Đăng nhập <%} else
 							{%> Đăng xuất <%} %> </a></li>
-
+							
 							<%} %>
-
+							
 						</ul>
 					</div>
 				</div>

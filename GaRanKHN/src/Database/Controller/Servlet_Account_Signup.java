@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Database.Management.getAccount;
+import Database.Model.Account;
+import Database.Model.Customer;
 
 /**
  * Servlet implementation class Servlet_Account_Signup
@@ -49,6 +51,19 @@ public class Servlet_Account_Signup extends HttpServlet {
 			request.setAttribute("message", "Tài khoản đã tồn tại");
 			RequestDispatcher dr = request.getRequestDispatcher("login");
 			dr.forward(request, response);
+		}
+		else
+		{
+		
+			
+			
+			Customer cus = new Customer(-1, null, null, null, account, mail);
+			gAcc.insertCustomer(cus);
+			int x = gAcc.getIdCustomerWithAccount(account);
+			 Account acc = new Account(account, x, matkhau);
+			 gAcc.insertAccount(acc);
+			 response.sendRedirect("SignupSuccess");
+			 
 		}
 		}
 		catch (Exception e) {

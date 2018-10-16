@@ -4,6 +4,7 @@ package Database.Management;
 import java.sql.*;
 
 import Database.Model.Account;
+import Database.Model.Customer;
 import Database.Model.Food;
 
 public class getAccount {
@@ -50,6 +51,35 @@ private String Food_name;
 		return false;
 	
 	}
+	
+	public void insertAccount(Account acc) throws SQLException, ClassNotFoundException
+	{
+		String sql="insert into Account values('"+acc.getIdAccount()+"',"+acc.getIdCustomer()+",'"+acc.getPassword()+"',1)";
+		stm.executeUpdate(sql);
+		System.out.println("insert tai khoan thanh cong");
+	}
+	
+	
+	public void insertCustomer(Customer cus) throws SQLException, ClassNotFoundException
+	{
+		String sql="INSERT INTO `garankhn`.`customer` (`Customer_name`, `Customer_birthday`, `Customer_phone`, `isActive`, `Account`, `Mail`) VALUES (null, null, null, b'1', '"+cus.getAccount()+"', '"+cus.getMail()+"')";
+		stm.executeUpdate(sql);
+		System.out.println("insert USER thanh cong");
+	}
+	
+	public int getIdCustomerWithAccount(String acc) throws SQLException
+	{
+		ResultSet rs= stm.executeQuery("select * from garankhn.customer a where a.Account ='"+acc+"'");
+		
+		while(rs.next())
+			{
+			return rs.getInt(1);
+			
+			}
+		return -1;
+		
+	}
+	
 
 	
 }

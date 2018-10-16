@@ -54,6 +54,8 @@ border: 5px solid #fff;
 		
 		<div id="header">
 		
+		<%session.setAttribute("activekey", 6); %>
+		
 			<%@ include file="header.jsp"%>
 		</div>
 

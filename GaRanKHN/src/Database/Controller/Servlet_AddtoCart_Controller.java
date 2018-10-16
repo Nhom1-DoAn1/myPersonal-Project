@@ -40,7 +40,8 @@ public class Servlet_AddtoCart_Controller extends HttpServlet {
 	 */
 	@SuppressWarnings("unused")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().setAttribute("activekey", 6);
+		HttpSession session = request.getSession();
+		session.setAttribute("activekey", 6);
 		Food food = null;
 		try {
 			int quantity = 1;
@@ -64,7 +65,7 @@ public class Servlet_AddtoCart_Controller extends HttpServlet {
 			item.setQuantity(1);
 			item.setPrice(food.getCast());
 
-			HttpSession session = request.getSession();
+
 			if(session.getAttribute("order") == null)
 			{	
 

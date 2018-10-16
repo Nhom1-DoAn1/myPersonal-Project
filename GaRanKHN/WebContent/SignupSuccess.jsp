@@ -1,5 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@page import="com.sun.java.swing.plaf.windows.resources.windows"%>
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
@@ -29,19 +28,22 @@ body {
 	background-color: #ff3640;
 }
 
-.myAds img {
-	margin-left: 80px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	float: none;
-	width: 400px;
-	height: 400px;
-	border: 5px solid #fff;
+
+.myAds img 
+{	
+margin-left: 80px;
+margin-top: 20px;	
+margin-bottom: 20px;	
+float:none;
+width: 400px;
+height: 400px;
+border: 5px solid #fff;
 }
 
 .myAds img:hover {
 	border: 5px solid #eca71b;
 }
+
 </style>
 
 </head>
@@ -49,29 +51,33 @@ body {
 <body>
 
 	<div id="container">
-
-		<div id="header">
-
-			<%
 		
-			session.setAttribute("activekey", 5);
-			%>
+		<div id="header">
+		
+		<%session.setAttribute("activekey", 5); %>
 		
 			<%@ include file="header.jsp"%>
 		</div>
 
 
 		<div id="content">
-			<%@ include file="login_detail.jsp"%>
 
 
+		<div>
+			<h1 style="text-align: center; margin: 50px; font-weight: 600; color: yellow;">ĐÃ ĐĂNG KÝ THÀNH CÔNG</h1>
+			</br>
+			<h2 style="text-align: center; margin-top: 0px; margin-bottom: 100px; font-weight: 500; color: yellow;">Vui lòng đăng nhập để cập nhật thêm thông tin</h2>
+			
+		</div>
+
+	
 		</div>
 
 
 		<div id="footer">
 			<%@ include file="footer.jsp"%>
 		</div>
-
+		
 	</div>
 
 

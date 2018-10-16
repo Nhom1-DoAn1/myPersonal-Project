@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>GaRanKHN</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>khn</welcome-file>
-  </welcome-file-list>
   <error-page>
     <error-code>404</error-code>
     <location>/WEB-INF/404.jsp</location>
   </error-page>
   <servlet>
     <servlet-name>HomePage</servlet-name>
-    <jsp-file>/homepage.jsp</jsp-file>
+    <jsp-file>/index.jsp</jsp-file>
   </servlet>
   <servlet-mapping>
     <servlet-name>HomePage</servlet-name>
@@ -110,7 +101,47 @@
     <servlet-name>signinAccount</servlet-name>
     <url-pattern>/signin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>deleteaproduct</servlet-name>
+    <servlet-class>Database.Controller.Servlet_Delete_A_Product</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteaproduct</servlet-name>
+    <url-pattern>/deleteproduct</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>downproduct</servlet-name>
+    <servlet-class>Database.Controller.Servlet_decrease_product</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>downproduct</servlet-name>
+    <url-pattern>/down</url-pattern>
+  </servlet-mapping>
+  
+  
+     <servlet>
+    <servlet-name>upproduct</servlet-name>
+    <servlet-class>Database.Controller.Servlet_inscrease_product</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>upproduct</servlet-name>
+    <url-pattern>/up</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SignupSuccess</servlet-name>
+    <jsp-file>/SignupSuccess.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SignupSuccess</servlet-name>
+    <url-pattern>/SignupSuccess</url-pattern>
+  </servlet-mapping>
   <session-config>
     <session-timeout>10</session-timeout>
   </session-config>
+  <welcome-file-list>
+    <welcome-file>khn</welcome-file>
+  </welcome-file-list>
 </web-app>

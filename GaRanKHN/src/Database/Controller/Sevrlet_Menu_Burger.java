@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Menu_Garan
@@ -31,7 +32,8 @@ public class Sevrlet_Menu_Burger extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		this.getServletContext().setAttribute("activekey", 2);
+		HttpSession session = request.getSession();
+		session.setAttribute("activekey", 2);
 		request.setAttribute("key", 2);
 			RequestDispatcher dr = request.getRequestDispatcher("Menu_garan.jsp");
 			dr.forward(request, response);

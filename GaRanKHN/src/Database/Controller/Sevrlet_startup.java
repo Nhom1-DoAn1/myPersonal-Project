@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.PageContext;
 
 /**
@@ -31,9 +32,10 @@ public class Sevrlet_startup extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().setAttribute("activekey", 0);
+		HttpSession session = request.getSession();
+		session.setAttribute("activekey", 0);
 		request.setAttribute("key", 0);
-		RequestDispatcher dr = request.getRequestDispatcher("home");
+		RequestDispatcher dr = request.getRequestDispatcher("index.jsp");
 		dr.forward(request, response);
 	}
 

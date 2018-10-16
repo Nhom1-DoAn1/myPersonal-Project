@@ -1681,7 +1681,7 @@ h2.title {
 
 #cart_items .cart_info .cart_menu {
   background: #f6f676;
-  color: #fff;
+  color: orange;
   font-size: 16px;
   font-family: 'Tahoma', Tahoma;
   font-weight: normal;
@@ -1693,7 +1693,7 @@ h2.title {
 
 
 #cart_items .cart_info .table.table-condensed tr {
-  border-bottom: 1px solid#F7F7F0
+  border-bottom: 1px solid orange;
 }
 
 #cart_items .cart_info .table.table-condensed tr:last-child {

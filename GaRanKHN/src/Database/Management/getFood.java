@@ -6,7 +6,7 @@ import java.sql.*;
 import Database.Model.Food;
 
 public class getFood {
-	 Statement stm;
+	  Statement stm;
 
 	public getFood() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
@@ -36,6 +36,8 @@ private String Food_name;
 	
 	public  Food getFoodswithId(String Kind) throws SQLException, ClassNotFoundException{
 
+	/*	Class.forName("com.mysql.jdbc.Driver");
+		stm = DriverManager.getConnection("jdbc:mysql://localhost/garankhn?useSSL=false", "root", "hongkha123").createStatement(); */
 		ResultSet rs= stm.executeQuery("select * from food where idFood = '" + String.valueOf(Kind)+"'");
 		System.out.println("Get food with ID successfully");
 		Food f = null;
@@ -44,6 +46,13 @@ private String Food_name;
 		return f;
 	}
 
+	
+	
+/*	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		Food f = getFoodswithId("img_bur_7");
+		System.out.println(f.getFood_name());
+	}
+*/	
 
 	
 }
